@@ -7,7 +7,6 @@ const AddWidgetModal = ({ visible, onCancel, onAdd }) => {
     const [form] = Form.useForm();
     const [widgetType, setWidgetType] = useState('');
 
-    // Handle the OK action
     const handleOk = () => {
         form.validateFields().then(values => {
             const data = getDefaultData();
@@ -16,7 +15,6 @@ const AddWidgetModal = ({ visible, onCancel, onAdd }) => {
         });
     };
 
-    // Get default data based on widget type
     const getDefaultData = () => {
         switch (widgetType) {
             case 'pie':
@@ -24,7 +22,7 @@ const AddWidgetModal = ({ visible, onCancel, onAdd }) => {
             case 'bar':
                 return { January: 33, February: 53, March: 85, April: 41 };
             default:
-                return { 'No Data': 1 };  // Default data
+                return { 'No Data': 1 };
         }
     };
 
